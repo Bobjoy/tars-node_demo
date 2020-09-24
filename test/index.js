@@ -6,7 +6,7 @@ tarsRpc.setProperty('timeout', 2000);
 
 // 客户端和服务端都部署在本地。客户端直连本地服务
 let servant = 'DEMO.HelloWorldServer.HelloWorldObj';
-if (!process.TAF_CONFIG) {
+if (!process.TARS_CONFIG) {
     servant += '@tcp -h 127.0.0.1 -p 10086 -t 60000';
 }
 
