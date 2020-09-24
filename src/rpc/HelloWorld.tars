@@ -1,0 +1,30 @@
+module DEMO
+{
+
+  struct CommonRsp
+  {
+    0 require  int    code;     // 状态码：0成功
+    1 optional string message;  // 状态描述
+    2 optional string data;     // 数据
+  };
+
+  struct HelloReq
+  {
+    0 optional string username; // 对谁打招呼
+  };
+
+  struct WorldReq
+  {
+    0 optional string destination; // 目的地
+  };
+
+  interface HelloWorld
+  {
+    // 打招呼
+    int sayHello(HelloReq req, out CommonRsp rsp);
+
+    // 世界那么大，想出去走走
+    int goWorld(WorldReq req, out CommonRsp rsp);
+  };
+
+};
