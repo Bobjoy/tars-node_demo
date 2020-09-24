@@ -24,7 +24,7 @@
 
 ## 启动服务端
 ```bash
-$ npm run server
+$ npm run start
 
 > tars-node_demo@2.0.0 start /Users/xxx/study/tars_demo
 > nodemon --exec babel-node -w src src/index.js
@@ -40,7 +40,7 @@ tars server started
 ## 客户端测试
 
 ```bash
-$ npm run client
+$ npm run test
 
 > tars-node_demo@2.0.0 test /Users/xxx/study/tars_demo
 > babel-node test/index.js
