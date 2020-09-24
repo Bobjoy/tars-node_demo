@@ -4,20 +4,22 @@
 
 ```bash
 ├── README.md
-├── client.conf               // 客户端配置文件
 ├── package-lock.json
 ├── package.json
-├── server.conf               // 服务端配置文件
+├── server.conf                 // 服务端配置文件
 ├── src
-│   ├── index.js              // 服务端启动入口文件
+│   ├── index.js                // 服务端启动入口文件
 │   └── rpc
-│       ├── NodeTars.js       // tars2node 生成tars服务端文件
-│       ├── NodeTars.tars     // tars接口定义文件
-│       └── NodeTarsImp.js    // tars接口对于实现
+│       ├── HelloWorld.js       // tars2node 生成tars服务端文件
+│       ├── HelloWorld.tars     // tars接口定义文件
+│       └── HelloWorldImp.js    // tars接口对于实现
+│   └── services
+│       ├── HelloService.js     // ** 具体业务代码 **
+│       └── WorldService.js     // ** 具体业务代码 **
 └── test
-    ├── index.js              // 客户端测试入口文件
+    ├── index.js                // 客户端测试入口文件
     └── proxy
-        └── NodeTarsProxy.js  // tars2node 生成tars客户端文件
+        └── HelloWorldProxy.js  // tars2node 生成tars客户端文件
 ```
 
 ## 启动服务端
