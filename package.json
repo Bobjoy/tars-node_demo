@@ -1,0 +1,16 @@
+{
+  "name": "tars-node_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "server": "node src/index.js",
+    "client": "node test/index.js"
+  },
+  "keywords": ["tars", "tars-node", "tars.js"],
+  "author": "Bobjoy<bobjoy1010@163.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@tars/rpc": "^2.0.13"
+  }
+}
