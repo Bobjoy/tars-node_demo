@@ -24,11 +24,15 @@
 ```bash
 $ npm run server
 
-> server@1.0.0 server /Users/xxxx/study/tars_demo
-> node src/index.js
+> tars-node_demo@2.0.0 start /Users/xxx/study/tars_demo
+> nodemon --exec babel-node -w src src/index.js
 
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): src/**/*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `babel-node src/index.js`
 tars server started
- NodeTarsImp initialized
 ```
 
 ## 客户端测试
@@ -36,12 +40,9 @@ tars server started
 ```bash
 $ npm run client
 
-> server@1.0.0 client /Users/xxxx/study/tars_demo
-> node test/index.js
+> tars-node_demo@2.0.0 test /Users/xxx/study/tars_demo
+> babel-node test/index.js
 
-remote server endpoint: tcp -h 127.0.0.1 -p 14002 -t 10000
-result.response.costtime: 11
-result.response.return:  100002
-result.response.arguments.sValue1: OUT_czzou_1
-result.response.arguments.sValue1: OUT_czzou_2
+=== sayHello === { code: 0, message: 'ok', data: '你好，Tars！' }
+=== goWorld === { code: 0, message: 'ok', data: '世界那么大，我想去【西藏】走走！' }
 ```
