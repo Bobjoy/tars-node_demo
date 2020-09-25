@@ -1,11 +1,19 @@
 {
-  "name": "tars-node_demo",
+  "name": "HelloWorldServer",
   "version": "2.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "description": "这是一个Tars框架Nodejs示例程序",
+  "nodeAgent": "dist/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "nodemon --exec babel-node -w src src/index.js",
-    "test": "babel-node test/index.js"
+    "serve": "node dist/index.js",
+    "test": "babel-node test/index.js",
+    "lint": "eslint ./ --ext .js",
+    "clean": "rimraf release dist",
+    "build": "babel src -s -d dist --copy-files",
+    "release": "npm-run-all clean build release:copy release:deploy",
+    "release:copy": "cross-env-shell \"shx mkdir -p release/$npm_package_name && shx cp -r dist/ *.json *.conf release/$npm_package_name\" ",
+    "release:deploy": "cross-env-shell \"cd release/$npm_package_name && nodetools upload\" "
   },
   "keywords": [
     "tars",
@@ -20,8 +28,29 @@
     "@tars/rpc": "^2.0.13"
   },
   "devDependencies": {
+    "@tars/nodetools-cli": "0.0.7",
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.1.0",
     "babel-preset-env": "^1.7.0",
-    "nodemon": "^2.0.4"
+    "cross-env": "^7.0.2",
+    "eslint": "^7.9.0",
+    "eslint-config-alloy": "^3.8.0",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^3.0.2",
+    "shx": "^0.3.2"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "tars": {
+    "tarsurl": "http://localhost:3000",
+    "token": "e3445fc6e300539c1bb788ab0764a98e31a90748",
+    "platform": "linux",
+    "app": "DEMO",
+    "service": "HelloWorldServer",
+    "obj": "HelloWorldObj",
+    "set": ""
   }
 }

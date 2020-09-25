@@ -1,5 +1,5 @@
 import Tars from '@tars/rpc';
-import { DEMO } from './rpc/HelloWorldImp';
+import { DEMO } from './protocol/HelloWorldImp';
 
 /**
  * global exception
